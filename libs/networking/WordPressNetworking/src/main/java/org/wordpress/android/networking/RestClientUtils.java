@@ -219,6 +219,11 @@ public class RestClientUtils {
         get(path, listener, errorListener);
     }
 
+    public void getPurchases(String siteId, Listener listener, ErrorListener errorListener) {
+        String path = String.format("sites/%s/purchases", siteId);
+        get(path, listener, errorListener);
+    }
+
     /**
      * Set a site's theme
      */
