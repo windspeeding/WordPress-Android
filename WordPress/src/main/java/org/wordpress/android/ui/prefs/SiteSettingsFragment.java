@@ -43,6 +43,7 @@ import org.wordpress.android.WordPress;
 import org.wordpress.android.analytics.AnalyticsTracker;
 import org.wordpress.android.models.AccountHelper;
 import org.wordpress.android.models.Blog;
+import org.wordpress.android.networking.RestClientUtils;
 import org.wordpress.android.ui.ActivityLauncher;
 import org.wordpress.android.ui.main.WPMainActivity;
 import org.wordpress.android.ui.stats.StatsWidgetProvider;
@@ -372,6 +373,17 @@ public class SiteSettingsFragment extends PreferenceFragment
             showExportContentDialog();
             return true;
         } else if (preference == mDeleteSitePref) {
+            WordPress.getRestClientUtils().getPurchases(mBlog.getDotComBlogId(), new RestRequest.Listener() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    JSONObject response2 = response;
+                }
+            }, new RestRequest.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    String yup = error.toString();
+                }
+            });
             showDeleteSiteDialog();
             return true;
         }
