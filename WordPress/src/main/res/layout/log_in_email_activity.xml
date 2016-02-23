@@ -6,7 +6,6 @@
     android:id="@+id/sign_in_scroll_view"
     android:animateLayoutChanges="true"
     android:fillViewport="true"
-    android:backgroundTint="@color/blue_dark"
     android:gravity="center">
 
     <LinearLayout
@@ -56,7 +55,7 @@
         </RelativeLayout>
 
         <org.wordpress.android.widgets.WPTextView
-            android:id="@+id/nux_add_selfhosted_button"
+            android:id="@+id/sign_up"
             style="@style/WordPress.NUXFlatButton"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/nux_main_button_height"
