@@ -56,36 +56,16 @@
                 android:tint="@color/grey_darken_10" />
         </RelativeLayout>
 
-        <RelativeLayout
+        <org.wordpress.android.widgets.WPTextView
+            android:id="@+id/nux_add_selfhosted_button"
+            style="@style/WordPress.NUXFlatButton"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/nux_main_button_height"
+            android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp">
-
-            <org.wordpress.android.widgets.WPTextView
-                android:id="@+id/nux_sign_in_button"
-                style="@style/WordPress.NUXPrimaryButton"
-                android:layout_width="match_parent"
-                android:clickable="true"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="@string/sign_in" />
-
-            <RelativeLayout
-                android:id="@+id/nux_sign_in_progress_bar"
-                style="@style/WordPress.NUXPrimaryButton"
-                android:layout_width="match_parent"
-                android:enabled="false"
-                android:visibility="gone">
-
-                <ProgressBar
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true" />
-            </RelativeLayout>
-        </RelativeLayout>
+            android:gravity="center"
+            android:text="Or Sign Up" />
 
     </LinearLayout>
 
