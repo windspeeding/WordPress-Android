@@ -1278,5 +1278,6 @@
     <string name="public_display_name_hint">Display name will default to your username if it is not set</string>
     <string name="about_me">About me</string>
     <string name="about_me_hint">A few words about you…</string>
+    <string name="title_activity_log_in_email">LogInEmailActivity</string>
 
 </resources>

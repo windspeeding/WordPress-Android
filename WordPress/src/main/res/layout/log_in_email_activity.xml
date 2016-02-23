@@ -1,35 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="org.wordpress.android.ui.accounts.login.LogInEmailActivity">
+    android:id="@+id/sign_in_scroll_view"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    android:backgroundTint="@color/blue_dark"
+    android:gravity="center">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:theme="@style/WordPress.AppBarOverlay">
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/WordPress.PopupOverlay" />
+        <ImageView
+            android:id="@+id/nux_fragment_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/nux_icon_wp" />
 
-    </android.support.design.widget.AppBarLayout>
+        <RelativeLayout
+            android:id="@+id/nux_email_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true">
 
-    <include layout="@layout/content_log_in_email"/>
+            <org.wordpress.android.widgets.OpenSansEditText
+                android:id="@+id/nux_email"
+                style="@style/WordPress.NUXEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@+id/nux_password"
+                android:maxLength="@integer/max_length_username"
+                app:persistenceEnabled="true" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentStart="false"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/dashicon_admin_users"
+                android:tint="@color/grey_darken_10" />
+        </RelativeLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/nux_main_button_height"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp">
+
+            <org.wordpress.android.widgets.WPTextView
+                android:id="@+id/nux_sign_in_button"
+                style="@style/WordPress.NUXPrimaryButton"
+                android:layout_width="match_parent"
+                android:clickable="true"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/sign_in" />
+
+            <RelativeLayout
+                android:id="@+id/nux_sign_in_progress_bar"
+                style="@style/WordPress.NUXPrimaryButton"
+                android:layout_width="match_parent"
+                android:enabled="false"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
