@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:nextFocusDown="@+id/nux_password"
                 android:maxLength="@integer/max_length_username"
                 app:persistenceEnabled="true" />
